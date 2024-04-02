@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ITfy.BookStore.Web.Models.BookViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+<h1>Book: @Model.Title</h1>
+<dl>
+    <dt>ID</dt>
+    <dd>@Model.Id</dd>
+    <dt>Author</dt>
+    <dd>@Model.Author</dd>
+    <dt>Issued</dt>
+    <dd>@Model.Year</dd>
+</dl>
+
