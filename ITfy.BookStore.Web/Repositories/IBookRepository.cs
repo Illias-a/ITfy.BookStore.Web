@@ -6,7 +6,7 @@ namespace ITfy.BookStore.Web.Repositories
     {
         Task<List<Book>> GetAllAsync();
         Task<Book> GetByIdAsync(int id);
-        void CreateBookInRepository(Book book);
-        void UpdateBookInRepository(Book book);
+        Task CreateBookInRepository(Book book);
+        Task UpdateBookInRepository(Book book);
     }
 }

@@ -25,15 +25,17 @@ namespace ITfy.BookStore.Web.Repositories
             return Task.FromResult(_books.FirstOrDefault(book => book.Id == id));
         }
 
-        public void CreateBookInRepository(Book book)
+        public Task CreateBookInRepository(Book book)
         {
             int maxId = _books.Max(book => book.Id);
             book.Id = maxId + 1;
 
             _books.Add(book);
+
+            return Task.CompletedTask;
         }
 
-        public void UpdateBookInRepository(Book book)
+        public Task UpdateBookInRepository(Book book)
         {
             var bookToUpdate = _books.Find(b => b.Id == book.Id);
 
@@ -43,6 +45,8 @@ namespace ITfy.BookStore.Web.Repositories
                 bookToUpdate.Author = book.Author;
                 bookToUpdate.Year = book.Year;
             }
+            
+            return Task.CompletedTask;
         }
     }
 

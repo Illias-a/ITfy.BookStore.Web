@@ -44,7 +44,7 @@ namespace ITfy.BookStore.Web.Services
             return bookViewModel;
         }
 
-        public void CreateBook(BookCreateViewModel model)
+        public async Task CreateBook(BookCreateViewModel model)
         {
             var book = new Book
             {
@@ -53,10 +53,10 @@ namespace ITfy.BookStore.Web.Services
                 Year = model.Year
             };
 
-            _bookRepository.CreateBookInRepository(book);
+            await _bookRepository.CreateBookInRepository(book);
         }
 
-        public void UpdateBook(BookViewModel model)
+        public async Task UpdateBook(BookViewModel model)
         {
             var book = new Book
             {
@@ -66,7 +66,7 @@ namespace ITfy.BookStore.Web.Services
                 Year = model.Year
             };
 
-            _bookRepository.UpdateBookInRepository(book);
+            await _bookRepository.UpdateBookInRepository(book);
         }
     }
 }
